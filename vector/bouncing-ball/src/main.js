@@ -8,8 +8,8 @@ let walker;
 function setup() {
 	createCanvas(WIDTH, HEIGHT);
 
-	let position = new Vector2(WIDTH / 2, HEIGHT / 2);
-	let size = new Vector2(RADIUS, RADIUS);
+	let position =createVector(WIDTH / 2, HEIGHT / 2);
+	let size = createVector(RADIUS, RADIUS);
 	walker = new Walker(position, size);
 }
 
@@ -17,6 +17,6 @@ function draw() {
 	fill(0);
 	clear();
 
-	walker.walk();
+	walker.update();
 	walker.draw();
 }
