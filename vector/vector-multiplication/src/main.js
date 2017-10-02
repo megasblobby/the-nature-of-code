@@ -1,6 +1,7 @@
 "use strict";
 
 const WIDTH = 800, HEIGHT = 600;
+const HALF = 0.5;
 
 let center;
 
@@ -16,7 +17,8 @@ function draw() {
 
 	let mousePosition = createVector(mouseX, mouseY);
 	let displacement = p5.Vector.sub(mousePosition, center);
+	displacement.mult(HALF);
 	let endPosition = createVector(center.x + displacement.x,
-																 center.y + displacement.y);
+		center.y + displacement.y);
 	line(center.x, center.y, endPosition.x, endPosition.y);
 }
